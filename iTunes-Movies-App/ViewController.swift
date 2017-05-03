@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         iTunesAPI.requestMovieAPI()
+        print(iTunesAPI.movies)
         
     }
 
