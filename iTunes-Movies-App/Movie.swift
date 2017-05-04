@@ -9,18 +9,38 @@
 import Foundation
 
 class Movie {
-    var movieName: String?
-    var movieReleaseDate: String?
-    var moviePrice: String?
-    var moviePosterUrl: String?
-    var movieAppLink: String?
+    var movieTitle: String
+    var movieReleaseDate: String
+    var moviePrice: String
+    var moviePosterUrl: String
+    var movieAppLink: String
 
-    init(movieName: String, movieReleaseDate: String, moviePrice: String, moviePosterUrl: String, movieAppLink: String) {
-        self.movieName = movieName
+//    func convertToDictionary() -> [String: String] {
+//        var dictionary = [String: String]()
+//        
+//        dictionary["title"] = movieTitle
+//        dictionary["releasedate"] = movieReleaseDate
+//        dictionary["price"] = moviePrice
+//        dictionary["poster"] = moviePosterUrl
+//        dictionary["link"] = movieAppLink
+//    
+//        return dictionary
+//    }
+    
+    init(movieTitle: String, movieReleaseDate: String, moviePrice: String, moviePosterUrl: String, movieAppLink: String) {
+        self.movieTitle = movieTitle
         self.movieReleaseDate = movieReleaseDate
         self.moviePrice = moviePrice
         self.moviePosterUrl = moviePosterUrl
         self.movieAppLink = movieAppLink
     }
-
+    
+//    init(dictionary: [String : String]) {
+//        self.movieTitle = dictionary["title"]!
+//        self.movieReleaseDate = dictionary["releasedate"]!
+//        self.moviePrice = dictionary["price"]!
+//        self.moviePosterUrl = dictionary["url"]!
+//        self.movieAppLink = dictionary["link"]!
+//        
+//    }
 }

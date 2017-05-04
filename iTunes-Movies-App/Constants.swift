@@ -10,6 +10,16 @@ import Foundation
 
 class Constants {
     
+    // API URL
     static let itunesUrl = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
+
+    
+    //Segues
+    static let toMovieDetailedVC = "ToMovieDetailedVC"
+    
+    
+    //Tabel View Cell
+    static let movieCell = "MovieCell"
+    
 
 }
