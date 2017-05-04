@@ -23,8 +23,13 @@ class MainVC: UIViewController, iTunesMovieDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.toMovieDetailedVC {
             let destinationVC = segue.destination as! MovieDetailedVC
-            let moviesArray = iTunesAPI.moviesArray
+            let moviesArray = iTunesAPI.moviesArray[(tableView.indexPathForSelectedRow?.row)!]
+            
+            destinationVC.movieTitleLabel.text = moviesArray.movieTitle
+            destinationVC.moviePriceLabel.text = moviesArray.moviePrice
+            destinationVC.releaseDateLabel.text = moviesArray.movieReleaseDate
 
+            // Fix unwrap nil
         }
     }
     
@@ -62,6 +67,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.toMovieDetailedVC, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

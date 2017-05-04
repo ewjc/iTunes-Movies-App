@@ -15,17 +15,7 @@ class Movie {
     var moviePosterUrl: String
     var movieAppLink: String
 
-//    func convertToDictionary() -> [String: String] {
-//        var dictionary = [String: String]()
-//        
-//        dictionary["title"] = movieTitle
-//        dictionary["releasedate"] = movieReleaseDate
-//        dictionary["price"] = moviePrice
-//        dictionary["poster"] = moviePosterUrl
-//        dictionary["link"] = movieAppLink
-//    
-//        return dictionary
-//    }
+
     
     init(movieTitle: String, movieReleaseDate: String, moviePrice: String, moviePosterUrl: String, movieAppLink: String) {
         self.movieTitle = movieTitle
@@ -34,13 +24,4 @@ class Movie {
         self.moviePosterUrl = moviePosterUrl
         self.movieAppLink = movieAppLink
     }
-    
-//    init(dictionary: [String : String]) {
-//        self.movieTitle = dictionary["title"]!
-//        self.movieReleaseDate = dictionary["releasedate"]!
-//        self.moviePrice = dictionary["price"]!
-//        self.moviePosterUrl = dictionary["url"]!
-//        self.movieAppLink = dictionary["link"]!
-//        
-//    }
 }
