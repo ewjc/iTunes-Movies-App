@@ -14,7 +14,7 @@ class MovieDetailedVC: UIViewController {
     var movieTitle: String?
     var moviePrice: String?
     var movieReleaseDate: String?
-    
+    var moviePosterUrl: String?
     
     // IBOutlets
     @IBOutlet weak var movieTitleLabel: UILabel!

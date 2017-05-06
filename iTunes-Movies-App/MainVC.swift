@@ -22,14 +22,16 @@ class MainVC: UIViewController, iTunesMovieDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.toMovieDetailedVC {
             
+            
             if let destinationVC = segue.destination as? MovieDetailedVC {
                 
+                var moviesArray = iTunesAPI.moviesArray
+                let indexPath = tableView.indexPathForSelectedRow?.row
+                let selectedMovie = moviesArray[indexPath!]
                 
-                var movieArray = iTunesAPI.moviesArray
-                
-                destinationVC.movieTitle = iTunesAPI.moviesArray[0].movieTitle
-                destinationVC.moviePrice = iTunesAPI.moviesArray[0].moviePrice
-                destinationVC.movieReleaseDate = iTunesAPI.moviesArray[0].movieReleaseDate
+                destinationVC.movieTitle = selectedMovie.movieTitle
+                destinationVC.moviePrice = selectedMovie.moviePrice
+                destinationVC.movieReleaseDate = selectedMovie.movieReleaseDate
             }
             
         }
@@ -71,7 +73,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.toMovieDetailedVC, sender: UITableViewCell())
+        performSegue(withIdentifier: Constants.toMovieDetailedVC, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
