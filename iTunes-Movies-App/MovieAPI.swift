@@ -10,7 +10,6 @@ import Foundation
 
 protocol iTunesMovieDelegate {
     func didLoadMovies()
-    
 }
 
 class MovieAPI {
@@ -74,8 +73,6 @@ class MovieAPI {
                     
                     self.moviesArray.append(movie)
                 }
-                
-//                print("These are the movies that have been appended: \(self.movies[0].movieName)")
                 
                 if self.delegate != nil {
                     DispatchQueue.main.async {

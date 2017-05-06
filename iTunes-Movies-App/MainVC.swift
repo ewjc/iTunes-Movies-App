@@ -17,26 +17,23 @@ class MainVC: UIViewController, iTunesMovieDelegate {
     // Functions
     func didLoadMovies() {
         tableView.reloadData()
-        print("movies have been successfully loaded")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.toMovieDetailedVC {
-            let destinationVC = segue.destination as! MovieDetailedVC
-            let moviesArray = iTunesAPI.moviesArray[(tableView.indexPathForSelectedRow?.row)!]
             
-            destinationVC.movieTitleLabel.text = moviesArray.movieTitle
-            destinationVC.moviePriceLabel.text = moviesArray.moviePrice
-            destinationVC.releaseDateLabel.text = moviesArray.movieReleaseDate
-
-            // Fix unwrap nil
+            if let destinationVC = segue.destination as? MovieDetailedVC {
+                
+                
+                var movieArray = iTunesAPI.moviesArray
+                
+                destinationVC.movieTitle = iTunesAPI.moviesArray[0].movieTitle
+                destinationVC.moviePrice = iTunesAPI.moviesArray[0].moviePrice
+                destinationVC.movieReleaseDate = iTunesAPI.moviesArray[0].movieReleaseDate
+            }
+            
         }
     }
-    
-    
-    //IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-    
     
     // View Did Life Cycle
     override func viewDidLoad() {
@@ -50,6 +47,10 @@ class MainVC: UIViewController, iTunesMovieDelegate {
         iTunesAPI.moviesArray = []
     }
     
+    
+    
+    //IBOutlets
+    @IBOutlet weak var tableView: UITableView!
 }
 
 
@@ -70,7 +71,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.toMovieDetailedVC, sender: nil)
+        performSegue(withIdentifier: Constants.toMovieDetailedVC, sender: UITableViewCell())
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

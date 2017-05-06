@@ -10,6 +10,12 @@ import UIKit
 
 class MovieDetailedVC: UIViewController {
     
+    // Properties
+    var movieTitle: String?
+    var moviePrice: String?
+    var movieReleaseDate: String?
+    
+    
     // IBOutlets
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
@@ -24,12 +30,16 @@ class MovieDetailedVC: UIViewController {
     // View Did Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        movieTitleLabel.text = movieTitle
+        moviePriceLabel.text = moviePrice
+        releaseDateLabel.text = movieReleaseDate
+        
+    }
     
     
 }
