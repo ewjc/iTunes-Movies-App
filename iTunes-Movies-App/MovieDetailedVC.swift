@@ -20,15 +20,20 @@ class MovieDetailedVC: UIViewController {
     
     // Functions
     func getImage(moviePosterUrl: String) {
+        
         let urlString = moviePosterUrl
         let session = URLSession.shared
         let url = URL(string: urlString)
         
         let dataTask = session.dataTask(with: url!, completionHandler: { (data: Data?, URLResponse: URLResponse?, error: Error?) in
             if let data = data {
-                self.moviePosterImageView.image = UIImage(data: data)
+                
+                DispatchQueue.main.async(execute: {
+                    self.moviePosterImageView.image = UIImage(data: data)
+                })
             }
         })
+        
         dataTask.resume()
     }
     
@@ -54,7 +59,7 @@ class MovieDetailedVC: UIViewController {
         
         // Displays the imageview from the URL
         getImage(moviePosterUrl: moviePosterUrl)
-
+        
     }
     
     
