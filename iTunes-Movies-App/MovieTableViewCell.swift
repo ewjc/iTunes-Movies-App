@@ -10,15 +10,14 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
     
+    // IBOutlets
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var moviePriceLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-
+    
 }

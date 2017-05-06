@@ -101,42 +101,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-da-bQS">
-                                <rect key="frame" x="145" y="87" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-da-bQS">
+                                <rect key="frame" x="142.5" y="87" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGA-De-TYA">
-                                <rect key="frame" x="207" y="192" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGA-De-TYA">
+                                <rect key="frame" x="148.5" y="165" width="78.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckL-91-qos">
-                                <rect key="frame" x="24" y="128" width="157" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckL-91-qos">
+                                <rect key="frame" x="109" y="216" width="157" height="193"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="XiO-a2-Lsr"/>
+                                    <constraint firstAttribute="height" constant="193" id="wgA-Zf-X7B"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePR-NI-hau">
-                                <rect key="frame" x="110" y="552" width="154" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-lO-Cma">
+                                <rect key="frame" x="142.5" y="127" width="90" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePR-NI-hau">
+                                <rect key="frame" x="110.5" y="439" width="154" height="30"/>
                                 <state key="normal" title="View more information"/>
                                 <connections>
                                     <action selector="moreInfoButtonTapped:" destination="HkG-L3-RGI" eventType="touchUpInside" id="01W-SX-AtW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-lO-Cma">
-                                <rect key="frame" x="207" y="151" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ePR-NI-hau" firstAttribute="centerX" secondItem="9NO-De-5Zf" secondAttribute="centerX" id="0h6-6T-pdn"/>
+                            <constraint firstItem="ePR-NI-hau" firstAttribute="top" secondItem="ckL-91-qos" secondAttribute="bottom" constant="30" id="2bC-xs-pBw"/>
+                            <constraint firstItem="MGA-De-TYA" firstAttribute="top" secondItem="Sya-lO-Cma" secondAttribute="bottom" constant="20" id="58i-qZ-5j3"/>
+                            <constraint firstItem="K7o-da-bQS" firstAttribute="centerX" secondItem="9NO-De-5Zf" secondAttribute="centerX" id="5hq-FR-KuL"/>
+                            <constraint firstItem="ckL-91-qos" firstAttribute="top" secondItem="MGA-De-TYA" secondAttribute="bottom" constant="33" id="Pz8-se-l52"/>
+                            <constraint firstItem="Sya-lO-Cma" firstAttribute="centerX" secondItem="9NO-De-5Zf" secondAttribute="centerX" id="RAC-bd-ruh"/>
+                            <constraint firstItem="K7o-da-bQS" firstAttribute="top" secondItem="EQA-9n-9JZ" secondAttribute="bottom" constant="23" id="YB1-2S-4F1"/>
+                            <constraint firstItem="ckL-91-qos" firstAttribute="centerX" secondItem="9NO-De-5Zf" secondAttribute="centerX" id="knj-Do-sfD"/>
+                            <constraint firstItem="MGA-De-TYA" firstAttribute="centerX" secondItem="9NO-De-5Zf" secondAttribute="centerX" id="xWR-kM-GRr"/>
+                            <constraint firstItem="Sya-lO-Cma" firstAttribute="top" secondItem="K7o-da-bQS" secondAttribute="bottom" constant="19" id="xpp-Ig-HCo"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="moviePosterImageView" destination="ckL-91-qos" id="mXm-iE-AAU"/>

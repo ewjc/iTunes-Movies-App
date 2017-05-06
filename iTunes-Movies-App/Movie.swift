@@ -9,6 +9,8 @@
 import Foundation
 
 class Movie {
+    
+    // Properties
     var movieTitle: String
     var movieReleaseDate: String
     var moviePrice: String
@@ -16,7 +18,7 @@ class Movie {
     var movieAppLink: String
 
 
-    
+    // Initizialize a movie
     init(movieTitle: String, movieReleaseDate: String, moviePrice: String, moviePosterUrl: String, movieAppLink: String) {
         self.movieTitle = movieTitle
         self.movieReleaseDate = movieReleaseDate
@@ -24,4 +26,5 @@ class Movie {
         self.moviePosterUrl = moviePosterUrl
         self.movieAppLink = movieAppLink
     }
+    
 }

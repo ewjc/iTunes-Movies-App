@@ -64,7 +64,7 @@
 		090ACBDD1EB98FF30048C0FE /* iTunes-Movies-App */ = {
 			isa = PBXGroup;
 			children = (
-				090ACBF81EB9AED90048C0FE /* Helpers */,
+				090ACBF81EB9AED90048C0FE /* API */,
 				090ACBF21EB999140048C0FE /* Constants */,
 				090ACBF71EB9AECA0048C0FE /* Controller */,
 				090ACBF61EB9AEC60048C0FE /* View */,
@@ -111,12 +111,12 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		090ACBF81EB9AED90048C0FE /* Helpers */ = {
+		090ACBF81EB9AED90048C0FE /* API */ = {
 			isa = PBXGroup;
 			children = (
 				090ACBF01EB998DC0048C0FE /* MovieAPI.swift */,
 			);
-			name = Helpers;
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

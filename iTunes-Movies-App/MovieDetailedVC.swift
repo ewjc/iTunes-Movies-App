@@ -32,22 +32,28 @@ class MovieDetailedVC: UIViewController {
         dataTask.resume()
     }
     
+    func goToUrl(movieLink: String) {
+        let url = URL(string: movieLink)!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                print("The application has successfull opened the app")
+            })
+        }
+    }
     
     // View Did Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
+        guard let movieTitle = movieTitle, let moviePrice = moviePrice, let movieReleaseDate = movieReleaseDate, let moviePosterUrl = moviePosterUrl else { return }
         
         movieTitleLabel.text = movieTitle
-        moviePriceLabel.text = moviePrice
-        releaseDateLabel.text = movieReleaseDate
+        moviePriceLabel.text = "Price: \(moviePrice)"
+        releaseDateLabel.text = "Release Date: \(movieReleaseDate)"
         
-        // Renders image from URL
-        getImage(moviePosterUrl: moviePosterUrl!)
-        print(moviePosterUrl)
+        // Displays the imageview from the URL
+        getImage(moviePosterUrl: moviePosterUrl)
+
     }
     
     
@@ -60,5 +66,11 @@ class MovieDetailedVC: UIViewController {
     
     // IBActions
     @IBAction func moreInfoButtonTapped(_ sender: UIButton) {
+        
+        guard let movieLink = movieLink else { return }
+        
+        // Redirects user towards safari page
+        self.goToUrl(movieLink: movieLink)
+        print(movieLink)
     }
 }
