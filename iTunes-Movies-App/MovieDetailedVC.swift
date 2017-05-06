@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieDetailedVC: UIViewController {
-    
+
     // Properties
     var movieTitle: String?
     var moviePrice: String?
@@ -40,6 +40,7 @@ class MovieDetailedVC: UIViewController {
             })
         }
     }
+    
     
     // View Did Life Cycle
     override func viewDidLoad() {

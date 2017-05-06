@@ -18,7 +18,7 @@ class Constants {
     static let toMovieDetailedVC = "ToMovieDetailedVC"
     
     
-    // Tabel View Cell
+    // Table View Cell
     static let movieCell = "MovieCell"
     
 

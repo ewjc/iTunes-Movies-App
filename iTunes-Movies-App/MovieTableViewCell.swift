@@ -15,9 +15,10 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var moviePriceLabel: UILabel!
     
+    
+    // Nib 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 }

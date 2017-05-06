@@ -64,7 +64,7 @@ class MovieAPI {
                     let imageObject = imageParent[2] as! NSDictionary
                     let imageUrl = imageObject["label"] as! NSString
                     
-//                    Append movie details to movie array
+                    // Append movie details to movie array
                     let movie = Movie(movieTitle: title as String,
                                       movieReleaseDate: releaseDate as String,
                                       moviePrice: priceUSD as String,

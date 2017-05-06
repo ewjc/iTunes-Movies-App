@@ -56,6 +56,7 @@ class MainVC: UIViewController, iTunesMovieDelegate {
     
     //IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    
 }
 
 
