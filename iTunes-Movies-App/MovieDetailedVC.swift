@@ -15,18 +15,24 @@ class MovieDetailedVC: UIViewController {
     var moviePrice: String?
     var movieReleaseDate: String?
     var moviePosterUrl: String?
-    
-    // IBOutlets
-    @IBOutlet weak var movieTitleLabel: UILabel!
-    @IBOutlet weak var moviePosterImageView: UIImageView!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var moviePriceLabel: UILabel!
+    var movieLink: String?
     
     
-    // IBActions
-    @IBAction func moreInfoButtonTapped(_ sender: UIButton) {
+    // Functions
+    func getImage(moviePosterUrl: String) {
+        let urlString = moviePosterUrl
+        let session = URLSession.shared
+        let url = URL(string: urlString)
+        
+        let dataTask = session.dataTask(with: url!, completionHandler: { (data: Data?, URLResponse: URLResponse?, error: Error?) in
+            if let data = data {
+                self.moviePosterImageView.image = UIImage(data: data)
+            }
+        })
+        dataTask.resume()
     }
-
+    
+    
     // View Did Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,20 @@ class MovieDetailedVC: UIViewController {
         moviePriceLabel.text = moviePrice
         releaseDateLabel.text = movieReleaseDate
         
+        // Renders image from URL
+        getImage(moviePosterUrl: moviePosterUrl!)
+        print(moviePosterUrl)
     }
     
     
+    // IBOutlets
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var moviePosterImageView: UIImageView!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var moviePriceLabel: UILabel!
+    
+    
+    // IBActions
+    @IBAction func moreInfoButtonTapped(_ sender: UIButton) {
+    }
 }

@@ -29,13 +29,17 @@ class MainVC: UIViewController, iTunesMovieDelegate {
                 let indexPath = tableView.indexPathForSelectedRow?.row
                 let selectedMovie = moviesArray[indexPath!]
                 
+                
                 destinationVC.movieTitle = selectedMovie.movieTitle
                 destinationVC.moviePrice = selectedMovie.moviePrice
                 destinationVC.movieReleaseDate = selectedMovie.movieReleaseDate
+                destinationVC.moviePosterUrl = selectedMovie.moviePosterUrl
+                destinationVC.movieLink = selectedMovie.movieAppLink
             }
             
         }
     }
+    
     
     // View Did Life Cycle
     override func viewDidLoad() {
@@ -48,7 +52,6 @@ class MainVC: UIViewController, iTunesMovieDelegate {
         iTunesAPI.requestMovieAPI()
         iTunesAPI.moviesArray = []
     }
-    
     
     
     //IBOutlets
@@ -89,21 +92,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
